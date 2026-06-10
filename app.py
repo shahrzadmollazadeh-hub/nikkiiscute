@@ -69,7 +69,7 @@ button:hover{
 
 <h1> 🎂 Happy Birthday 🎂 </h1>
 
-<img src="/static/birthday.bin">
+<img src="/static/image.jpg">
 
 <p>
 Wishing you a wonderful birthday filled with happiness and success Nikki.
