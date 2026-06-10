@@ -91,6 +91,8 @@ def surprise():
 <head>
 <title>Surprise!</title>
 
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+
 <style>
 
 body{
@@ -120,6 +122,10 @@ p{
     color:#ff4d6d;
 }
 
+audio{
+    margin-top:20px;
+}
+
 </style>
 </head>
 
@@ -136,6 +142,30 @@ p{
 <audio controls autoplay loop>
     <source src="/static/music.mp3" type="audio/mpeg">
 </audio>
+
+<script>
+
+const duration = 5000;
+const end = Date.now() + duration;
+
+(function frame() {
+
+    confetti({
+        particleCount: 8,
+        spread: 120,
+        origin: {
+            x: Math.random(),
+            y: Math.random() - 0.2
+        }
+    });
+
+    if (Date.now() < end) {
+        requestAnimationFrame(frame);
+    }
+
+}());
+
+</script>
 
 </body>
 </html>
